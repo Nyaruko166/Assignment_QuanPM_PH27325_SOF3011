@@ -1,8 +1,11 @@
 package com.example.assignment_quanpm_ph27325_sof3011.entity;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.UUID;
 
 @Table(name = "ChiTietSP")
 @Entity
@@ -14,19 +17,19 @@ public class ChiTietSP {
     @Id
     @Column(name = "Id")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    private UUID id;
 
     @Column(name = "IdSP")
-    private String idSP;
+    private UUID idSP;
 
     @Column(name = "IdNsx")
-    private String idNSX;
+    private UUID idNSX;
 
     @Column(name = "IdMauSac")
-    private String idMauSac;
+    private UUID idMauSac;
 
     @Column(name = "IdDongSP")
-    private String idDongSP;
+    private UUID idDongSP;
 
     @Column(name = "NamBH")
     private Integer namBH;
