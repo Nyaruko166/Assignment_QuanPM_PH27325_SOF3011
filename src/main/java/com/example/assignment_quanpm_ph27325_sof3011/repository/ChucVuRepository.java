@@ -1,0 +1,27 @@
+package com.example.assignment_quanpm_ph27325_sof3011.repository;
+
+import com.example.assignment_quanpm_ph27325_sof3011.entity.ChucVu;
+import com.example.assignment_quanpm_ph27325_sof3011.util.HibernateUtil;
+import org.hibernate.Session;
+import org.hibernate.query.Query;
+
+import java.util.List;
+
+public class ChucVuRepository {
+
+    private Session session = HibernateUtil.getFACTORY().openSession();
+    private String fromTable = "FROM ChucVu";
+
+    public List<ChucVu> getAll() {
+        Query query = session.createQuery(fromTable);
+        return query.getResultList();
+    }
+
+//    public static void main(String[] args) {
+//        ChucVuRepository chucVuRepository = new ChucVuRepository();
+//        List<ChucVu> lstCV = chucVuRepository.getAll();
+//        for (ChucVu cv : lstCV) {
+//            System.out.println(cv.toString());
+//        }
+//    }
+}
