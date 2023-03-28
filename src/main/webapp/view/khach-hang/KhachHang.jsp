@@ -18,10 +18,10 @@
 </head>
 <body>
 <form action="/khach-hang/add" method="post" class="container">
-    <div class="mb-2">
-        <label for="id" class="form-label">ID</label>
-        <input type="text" class="form-control" id="id" name="id" disabled>
-    </div>
+<%--    <div class="mb-2">--%>
+<%--        <label for="id" class="form-label">ID</label>--%>
+<%--        <input type="text" class="form-control" id="id" name="id" disabled>--%>
+<%--    </div>--%>
     <div class="mb-2">
         <label for="ma" class="form-label">Mã</label>
         <input type="text" class="form-control" id="ma" name="ma">
@@ -62,44 +62,48 @@
         <label for="matKhau" class="form-label">Mật Khẩu</label>
         <input type="password" class="form-control" id="matKhau" name="matKhau">
     </div>
-    <button type="submit" class="btn btn-success">Thêm</button>
+    <div class="col-md-12 text-center">
+        <button type="submit" class="btn btn-success">Thêm</button>
+    </div>
 </form>
-<table class="table">
-    <thead>
-    <tr>
-        <td>Id</td>
-        <td>Mã</td>
-        <td>Tên</td>
-        <td>Tên Đệm</td>
-        <td>Họ</td>
-        <td>Ngày Sinh</td>
-        <td>SDT</td>
-        <td>Địa Chỉ</td>
-        <td>Thành Phố</td>
-        <td>Quốc Gia</td>
-        <td>Mật Khẩu</td>
-        <td>Action</td>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach items="${listKhachHang}" var="kh">
+<section style="text-align: center">
+    <table class="table table-striped table-hover">
+        <thead>
         <tr>
-            <td>${kh.id}</td>
-            <td>${kh.ma}</td>
-            <td>${kh.ten}</td>
-            <td>${kh.tenDem}</td>
-            <td>${kh.ho}</td>
-            <td>${kh.ngaySinh}</td>
-            <td>${kh.sdt}</td>
-            <td>${kh.diaChi}</td>
-            <td>${kh.thanhPho}</td>
-            <td>${kh.quocGia}</td>
-            <td>${kh.matKhau}</td>
-            <td><a href="/khach-hang/detail?id=${kh.id}" class="btn btn-success">Detail</a>
-                <a href="/khach-hang/delete?id=${kh.id}" class="btn btn-danger">Delete</a></td>
+            <td>Id</td>
+            <td>Mã</td>
+            <td>Tên</td>
+            <td>Tên Đệm</td>
+            <td>Họ</td>
+            <td>Ngày Sinh</td>
+            <td>SDT</td>
+            <td>Địa Chỉ</td>
+            <td>Thành Phố</td>
+            <td>Quốc Gia</td>
+            <td>Mật Khẩu</td>
+            <td>Action</td>
         </tr>
-    </c:forEach>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+        <c:forEach items="${listKhachHang}" var="kh">
+            <tr>
+                <td>${kh.id}</td>
+                <td>${kh.ma}</td>
+                <td>${kh.ten}</td>
+                <td>${kh.tenDem}</td>
+                <td>${kh.ho}</td>
+                <td>${kh.ngaySinh}</td>
+                <td>${kh.sdt}</td>
+                <td>${kh.diaChi}</td>
+                <td>${kh.thanhPho}</td>
+                <td>${kh.quocGia}</td>
+                <td>${kh.matKhau}</td>
+                <td><a href="/khach-hang/detail?id=${kh.id}" class="btn btn-success">Detail</a>
+                    <a href="/khach-hang/delete?id=${kh.id}" class="btn btn-danger">Delete</a></td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</section>
 </body>
 </html>

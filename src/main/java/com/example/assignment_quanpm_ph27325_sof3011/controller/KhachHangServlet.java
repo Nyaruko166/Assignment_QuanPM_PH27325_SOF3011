@@ -40,7 +40,7 @@ public class KhachHangServlet extends HttpServlet {
         String ngaySinh = dateFormat.format(kh.getNgaySinh());
         request.setAttribute("khachHang", kh);
         request.setAttribute("ngaySinh", ngaySinh);
-        request.getRequestDispatcher("/view/khach-hang/detail.jsp").forward(request, response);
+        request.getRequestDispatcher("/view/khach-hang/detailKH.jsp").forward(request, response);
     }
 
     private void deleteKH(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -78,6 +78,7 @@ public class KhachHangServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
 
+        kh.setId(uid);
         kh.setMa(ma);
         kh.setTen(ten);
         kh.setHo(ho);

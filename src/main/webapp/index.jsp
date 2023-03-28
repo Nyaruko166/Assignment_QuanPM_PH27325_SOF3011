@@ -8,6 +8,8 @@
 <h1><%= "Hello World!" %>
 </h1>
 <br/>
-<a href="/khach-hang/view">Hello Servlet</a>
+<a href="/khach-hang/view" class="btn btn-info">Hello Khách Hàng</a>
+<br>
+<a href="/chuc-vu/view" class="btn btn-info">Hello Chức Vụ</a>
 </body>
 </html>

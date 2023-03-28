@@ -11,13 +11,17 @@ import java.util.UUID;
 
 public class KhachHangRepository {
 
-    private Session session = HibernateUtil.getFACTORY().openSession();
     private String fromTable = "FROM KhachHang";
     Transaction transaction;
 
     public List<KhachHang> getAll() {
-        Query query = session.createQuery(fromTable);
-        return query.getResultList();
+        try (Session session = HibernateUtil.getFACTORY().openSession()) {
+            Query query = session.createQuery(fromTable);
+            return query.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public KhachHang getOne(UUID id) {

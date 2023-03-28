@@ -22,7 +22,7 @@ public class HibernateUtil {
         properties.put(Environment.URL, "jdbc:sqlserver://localhost:1433;databaseName=FINALASS_FPOLYSHOP_FA22_SOF205__SOF2041");
         properties.put(Environment.USER, "sa");
         properties.put(Environment.PASS, "123456");
-        properties.put(Environment.SHOW_SQL, "true");
+        properties.put(Environment.SHOW_SQL, "false");
 
         conf.setProperties(properties);
         conf.addAnnotatedClass(KhachHang.class);
