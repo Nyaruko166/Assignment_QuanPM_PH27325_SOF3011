@@ -36,7 +36,7 @@ public class CuaHangRepository {
 
     public void addCH(CuaHang ch) {
         try (Session session = HibernateUtil.getFACTORY().openSession()) {
-            session.beginTransaction();
+            transaction = session.beginTransaction();
             session.save(ch);
             transaction.commit();
         } catch (Exception e) {
@@ -46,7 +46,7 @@ public class CuaHangRepository {
 
     public void updateCH(CuaHang ch) {
         try (Session session = HibernateUtil.getFACTORY().openSession()) {
-            session.beginTransaction();
+            transaction = session.beginTransaction();
             session.merge(ch);
             transaction.commit();
         } catch (Exception e) {
@@ -56,7 +56,7 @@ public class CuaHangRepository {
 
     public void deleteCH(CuaHang ch) {
         try (Session session = HibernateUtil.getFACTORY().openSession()) {
-            session.beginTransaction();
+            transaction = session.beginTransaction();
             session.delete(ch);
             transaction.commit();
         } catch (Exception e) {
