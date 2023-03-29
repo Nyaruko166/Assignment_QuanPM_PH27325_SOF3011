@@ -11,5 +11,7 @@
 <a href="/khach-hang/view" class="btn btn-info">Hello Khách Hàng</a>
 <br>
 <a href="/chuc-vu/view" class="btn btn-info">Hello Chức Vụ</a>
+<br>
+<a href="/cua-hang/view" class="btn btn-info">Hello Cửa Hàng</a>
 </body>
 </html>
