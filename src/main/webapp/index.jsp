@@ -9,13 +9,15 @@
           crossorigin="anonymous">
 </head>
 <body>
-<h1><%= "Hello World!" %>
-</h1>
-<br/>
-<a href="/khach-hang/view" class="btn btn-info">Hello Khách Hàng</a>
-<br>
-<a href="/chuc-vu/view" class="btn btn-info">Hello Chức Vụ</a>
-<br>
-<a href="/cua-hang/view" class="btn btn-info">Hello Cửa Hàng</a>
+<section class="container" style="margin: auto">
+    <h1>
+        <%= "Hello World!" %>
+    </h1>
+    <br>
+    <a href="/khach-hang/view" class="btn btn-info">Hello Khách Hàng</a>
+    <a href="/chuc-vu/view" class="btn btn-info">Hello Chức Vụ</a>
+    <a href="/cua-hang/view" class="btn btn-info">Hello Cửa Hàng</a>
+    <a href="/dong-sp/view" class="btn btn-info">Hello Dòng SP</a>
+</section>
 </body>
 </html>

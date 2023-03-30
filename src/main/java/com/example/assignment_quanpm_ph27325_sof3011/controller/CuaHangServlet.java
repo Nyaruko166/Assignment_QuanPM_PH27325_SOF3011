@@ -2,9 +2,11 @@ package com.example.assignment_quanpm_ph27325_sof3011.controller;
 
 import com.example.assignment_quanpm_ph27325_sof3011.entity.CuaHang;
 import com.example.assignment_quanpm_ph27325_sof3011.repository.CuaHangRepository;
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.util.List;
