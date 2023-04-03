@@ -20,6 +20,8 @@
     <a href="/dong-sp/view" class="btn btn-info">Hello Dòng SP</a>
     <a href="/mau-sac/view" class="btn btn-info">Hello Màu Sắc</a>
     <a href="/nsx/view" class="btn btn-info">Hello NSX</a>
+    <a href="/nhan-vien/view" class="btn btn-info">Hello Nhân Viên</a>
+
 </section>
 </body>
 </html>
