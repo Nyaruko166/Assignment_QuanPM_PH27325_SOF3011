@@ -45,11 +45,13 @@ public class NhanVien {
     @Column(name = "MatKhau")
     private String matKhau;
 
-    @Column(name = "IdCH")
-    private UUID idCH;
+    @ManyToOne
+    @JoinColumn(name = "IdCH", referencedColumnName = "Id")
+    private CuaHang cuaHang;
 
-    @Column(name = "IdCV")
-    private UUID idCV;
+    @ManyToOne
+    @JoinColumn(name = "IdCV", referencedColumnName = "Id")
+    private ChucVu chucVu;
 
     @Column(name = "IdGuiBC")
     private String idGuiBC;
