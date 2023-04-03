@@ -16,7 +16,7 @@
           crossorigin="anonymous">
 </head>
 <body>
-<form action="/nhan-vien/add" method="post" class="container">
+<form action="/nsx/add" method="post" class="container">
     <%--    <div class="mb-2">--%>
     <%--        <label for="id" class="form-label">ID</label>--%>
     <%--        <input type="text" class="form-control" id="id" name="id" disabled>--%>
