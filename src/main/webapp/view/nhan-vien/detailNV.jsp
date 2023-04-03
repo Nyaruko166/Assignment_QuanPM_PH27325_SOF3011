@@ -39,6 +39,7 @@
         <input type="text" class="form-control" id="ho" name="ho" value="${nv.ho}">
     </div>
     <div class="mb-2">
+        <label class="form-label">Giới Tính</label>
         <div class="form-check">
             <input value="Nam" class="form-check-input" type="radio" name="gioiTinh"
                    id="flexRadioDefault1" ${nv.gioiTinh == "Nam" ? 'checked' : ''}>
@@ -90,8 +91,19 @@
         </select>
     </div>
     <div class="mb-2">
-        <label for="trangThai" class="form-label">Trạng Thái</label>
-        <input type="text" class="form-control" id="trangThai" name="trangThai" value="${nv.trangThai}">
+        <label class="form-label">Trạng Thái</label>
+        <div class="form-check">
+            <input value="1" class="form-check-input" type="radio" name="trangThai" id="trangThai1" ${nv.trangThai == 1 ? 'checked' : ''}>
+            <label class="form-check-label" for="trangThai1">
+                Hoạt Động
+            </label>
+        </div>
+        <div class="form-check">
+            <input value="0" class="form-check-input" type="radio" name="trangThai" id="trangThai2" ${nv.trangThai == 0 ? 'checked' : ''}>
+            <label class="form-check-label" for="trangThai2">
+                Ngừng Hoạt Động
+            </label>
+        </div>
     </div>
     <div class="col-md-12 text-center">
         <button type="submit" class="btn btn-success">Sửa</button>

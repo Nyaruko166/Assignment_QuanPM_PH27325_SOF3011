@@ -6,9 +6,12 @@ import com.example.assignment_quanpm_ph27325_sof3011.entity.NhanVien;
 import com.example.assignment_quanpm_ph27325_sof3011.repository.ChucVuRepository;
 import com.example.assignment_quanpm_ph27325_sof3011.repository.CuaHangRepository;
 import com.example.assignment_quanpm_ph27325_sof3011.repository.NhanVienRepository;
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import lombok.SneakyThrows;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -78,6 +81,7 @@ public class NhanVienServlet extends HttpServlet {
         request.getRequestDispatcher("/view/nhan-vien/NhanVien.jsp").forward(request, response);
     }
 
+    @SneakyThrows
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         uri = request.getRequestURI();
@@ -88,7 +92,7 @@ public class NhanVienServlet extends HttpServlet {
         }
     }
 
-    private void add(HttpServletRequest request, HttpServletResponse response) throws ParseException {
+    private void add(HttpServletRequest request, HttpServletResponse response) throws ParseException, IOException {
         UUID id = null;
         String ma = request.getParameter("ma");
         String ten = request.getParameter("ten");
@@ -100,13 +104,50 @@ public class NhanVienServlet extends HttpServlet {
         String sdt = request.getParameter("sdt");
         String matKhau = request.getParameter("matKhau");
         String idCH = request.getParameter("cuaHang");
+        CuaHang ch = cuaHangRepository.getOne(UUID.fromString(idCH));
         String idCV = request.getParameter("chucVu");
+        ChucVu cv = chucVuRepository.getOne(UUID.fromString(idCV));
         String idGuiBC = null;
         Integer trangThai = Integer.parseInt(request.getParameter("trangThai"));
 
-//        nhanVienRepository.addNV(new );
+        nhanVienRepository.addNV(new NhanVien(id, ma, ten, tenDem, ho, gioiTinh, ngaySinh, diaChi, sdt, matKhau, ch, cv, idGuiBC, trangThai));
+        response.sendRedirect("/nhan-vien/view");
     }
 
-    private void update(HttpServletRequest request, HttpServletResponse response) {
+    private void update(HttpServletRequest request, HttpServletResponse response) throws ParseException, IOException {
+        NhanVien nv = nhanVienRepository.getOne(uid);
+        String ma = request.getParameter("ma");
+        String ten = request.getParameter("ten");
+        String tenDem = request.getParameter("tenDem");
+        String ho = request.getParameter("ho");
+        String gioiTinh = request.getParameter("gioiTinh");
+        Date ngaySinh = format.parse(request.getParameter("ngaySinh"));
+        String diaChi = request.getParameter("diaChi");
+        String sdt = request.getParameter("sdt");
+        String matKhau = request.getParameter("matKhau");
+        String idCH = request.getParameter("cuaHang");
+        CuaHang ch = cuaHangRepository.getOne(UUID.fromString(idCH));
+        String idCV = request.getParameter("chucVu");
+        ChucVu cv = chucVuRepository.getOne(UUID.fromString(idCV));
+        String idGuiBC = null;
+        Integer trangThai = Integer.parseInt(request.getParameter("trangThai"));
+
+        nv.setId(uid);
+        nv.setMa(ma);
+        nv.setTen(ten);
+        nv.setTenDem(tenDem);
+        nv.setHo(ho);
+        nv.setGioiTinh(gioiTinh);
+        nv.setNgaySinh(ngaySinh);
+        nv.setDiaChi(diaChi);
+        nv.setSdt(sdt);
+        nv.setMatKhau(matKhau);
+        nv.setCuaHang(ch);
+        nv.setChucVu(cv);
+        nv.setIdGuiBC(idGuiBC);
+        nv.setTrangThai(trangThai);
+
+        nhanVienRepository.updateNV(nv);
+        response.sendRedirect("/nhan-vien/view");
     }
 }
