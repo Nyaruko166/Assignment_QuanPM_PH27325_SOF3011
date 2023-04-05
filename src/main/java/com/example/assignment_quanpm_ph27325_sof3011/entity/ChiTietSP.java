@@ -19,17 +19,21 @@ public class ChiTietSP {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    @Column(name = "IdSP")
-    private UUID idSP;
+    @ManyToOne
+    @JoinColumn(name = "IdSP", referencedColumnName = "Id")
+    private SanPham sanPham;
 
-    @Column(name = "IdNsx")
-    private UUID idNSX;
+    @ManyToOne
+    @JoinColumn(name = "IdNsx", referencedColumnName = "Id")
+    private NSX nsx;
 
-    @Column(name = "IdMauSac")
-    private UUID idMauSac;
+    @ManyToOne
+    @JoinColumn(name = "IdNsx", referencedColumnName = "Id")
+    private MauSac mauSac;
 
-    @Column(name = "IdDongSP")
-    private UUID idDongSP;
+    @ManyToOne
+    @JoinColumn(name = "IdDongSP", referencedColumnName = "Id")
+    private DongSP dongSP;
 
     @Column(name = "NamBH")
     private Integer namBH;
