@@ -15,48 +15,54 @@
           rel="stylesheet"
           integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
           crossorigin="anonymous">
+    <link href="/css/css.css" rel="stylesheet"/>
 </head>
 <body>
 <form action="/ctsp/update" method="post" class="container">
+    <h2 class="title">Chi Tiết SP</h2>
     <div class="mb-2">
         <label for="id" class="form-label">ID</label>
         <input type="text" class="form-control" id="id" name="id" disabled value="${ctsp.id}">
     </div>
-    <div class="mb-2">
-        <label for="sanPham" class="form-label">Sản Phẩm</label>
-        <select name="sanPham" id="sanPham" class="form-select" aria-label="Default select example">
-            <%--        <option selected>Open this select menu</option>--%>
-            <c:forEach items="${lstSP}" var="sp">
-                <option value="${sp.id}" ${ctsp.sanPham.id == sp.id ? 'selected' : ""}>${sp.ten}</option>
-            </c:forEach>
-        </select>
+    <div class="row">
+        <div class="col-6">
+            <label for="sanPham" class="form-label">Sản Phẩm</label>
+            <select name="sanPham" id="sanPham" class="form-select" aria-label="Default select example">
+                <%--        <option selected>Open this select menu</option>--%>
+                <c:forEach items="${lstSP}" var="sp">
+                    <option value="${sp.id}" ${ctsp.sanPham.id == sp.id ? 'selected' : ""}>${sp.ten}</option>
+                </c:forEach>
+            </select>
+        </div>
+        <div class="col-6">
+            <label for="nsx" class="form-label">Nhà Sản Xuất</label>
+            <select name="nsx" id="nsx" class="form-select" aria-label="Default select example">
+                <%--        <option selected>Open this select menu</option>--%>
+                <c:forEach items="${lstNSX}" var="nsx">
+                    <option value="${nsx.id}" ${ctsp.nsx.id == nsx.id ? 'selected' : ""}>${nsx.ten}</option>
+                </c:forEach>
+            </select>
+        </div>
     </div>
-    <div class="mb-2">
-        <label for="nsx" class="form-label">Nhà Sản Xuất</label>
-        <select name="nsx" id="nsx" class="form-select" aria-label="Default select example">
-            <%--        <option selected>Open this select menu</option>--%>
-            <c:forEach items="${lstNSX}" var="nsx">
-                <option value="${nsx.id}" ${ctsp.nsx.id == nsx.id ? 'selected' : ""}>${nsx.ten}</option>
-            </c:forEach>
-        </select>
-    </div>
-    <div class="mb-2">
-        <label for="mauSac" class="form-label">Màu Sắc</label>
-        <select name="mauSac" id="mauSac" class="form-select" aria-label="Default select example">
-            <%--        <option selected>Open this select menu</option>--%>
-            <c:forEach items="${lstMS}" var="ms">
-                <option value="${ms.id}" ${ctsp.mauSac.id == ms.id ? 'selected' : ""}>${ms.ten}</option>
-            </c:forEach>
-        </select>
-    </div>
-    <div class="mb-2">
-        <label for="dongSP" class="form-label">Dòng Sản Phẩm</label>
-        <select name="dongSP" id="dongSP" class="form-select" aria-label="Default select example">
-            <%--        <option selected>Open this select menu</option>--%>
-            <c:forEach items="${lstDSP}" var="dsp">
-                <option value="${dsp.id}" ${ctsp.dongSP.id == dsp.id ? 'selected' : ""}>${dsp.ten}</option>
-            </c:forEach>
-        </select>
+    <div class="row">
+        <div class="col-6">
+            <label for="mauSac" class="form-label">Màu Sắc</label>
+            <select name="mauSac" id="mauSac" class="form-select" aria-label="Default select example">
+                <%--        <option selected>Open this select menu</option>--%>
+                <c:forEach items="${lstMS}" var="ms">
+                    <option value="${ms.id}" ${ctsp.mauSac.id == ms.id ? 'selected' : ""}>${ms.ten}</option>
+                </c:forEach>
+            </select>
+        </div>
+        <div class="col-6">
+            <label for="dongSP" class="form-label">Dòng Sản Phẩm</label>
+            <select name="dongSP" id="dongSP" class="form-select" aria-label="Default select example">
+                <%--        <option selected>Open this select menu</option>--%>
+                <c:forEach items="${lstDSP}" var="dsp">
+                    <option value="${dsp.id}" ${ctsp.dongSP.id == dsp.id ? 'selected' : ""}>${dsp.ten}</option>
+                </c:forEach>
+            </select>
+        </div>
     </div>
     <div class="mb-2">
         <label for="namBH" class="form-label">Năm Bảo Hành</label>

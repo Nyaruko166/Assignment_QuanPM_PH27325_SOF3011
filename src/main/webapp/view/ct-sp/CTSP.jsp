@@ -14,48 +14,60 @@
           rel="stylesheet"
           integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
           crossorigin="anonymous">
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+          type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+          rel="stylesheet" type="text/css"/>
+    <link href="/css/css.css" rel="stylesheet"/>
 </head>
 <body>
+<%@include file="/view/layout/header.jsp" %>
 <form action="/ctsp/add" method="post" class="container">
+    <h2 class="title">Thông Tin Chi Tiết SP</h2>
     <%--    <div class="mb-2">--%>
     <%--        <label for="id" class="form-label">ID</label>--%>
     <%--        <input type="text" class="form-control" id="id" name="id" disabled>--%>
     <%--    </div>--%>
-    <div class="mb-2">
-        <label for="sanPham" class="form-label">Sản Phẩm</label>
-        <select name="sanPham" id="sanPham" class="form-select" aria-label="Default select example">
-            <%--        <option selected>Open this select menu</option>--%>
-            <c:forEach items="${lstSP}" var="sp">
-                <option value="${sp.id}">${sp.ten}</option>
-            </c:forEach>
-        </select>
+    <div class="row">
+        <div class="col-6">
+            <label for="sanPham" class="form-label">Sản Phẩm</label>
+            <select name="sanPham" id="sanPham" class="form-select" aria-label="Default select example">
+                <%--        <option selected>Open this select menu</option>--%>
+                <c:forEach items="${lstSP}" var="sp">
+                    <option value="${sp.id}">${sp.ten}</option>
+                </c:forEach>
+            </select>
+        </div>
+        <div class="col-6">
+            <label for="nsx" class="form-label">Nhà Sản Xuất</label>
+            <select name="nsx" id="nsx" class="form-select" aria-label="Default select example">
+                <%--        <option selected>Open this select menu</option>--%>
+                <c:forEach items="${lstNSX}" var="nsx">
+                    <option value="${nsx.id}">${nsx.ten}</option>
+                </c:forEach>
+            </select>
+        </div>
     </div>
-    <div class="mb-2">
-        <label for="nsx" class="form-label">Nhà Sản Xuất</label>
-        <select name="nsx" id="nsx" class="form-select" aria-label="Default select example">
-            <%--        <option selected>Open this select menu</option>--%>
-            <c:forEach items="${lstNSX}" var="nsx">
-                <option value="${nsx.id}">${nsx.ten}</option>
-            </c:forEach>
-        </select>
-    </div>
-    <div class="mb-2">
-        <label for="mauSac" class="form-label">Màu Sắc</label>
-        <select name="mauSac" id="mauSac" class="form-select" aria-label="Default select example">
-            <%--        <option selected>Open this select menu</option>--%>
-            <c:forEach items="${lstMS}" var="ms">
-                <option value="${ms.id}">${ms.ten}</option>
-            </c:forEach>
-        </select>
-    </div>
-    <div class="mb-2">
-        <label for="dongSP" class="form-label">Dòng Sản Phẩm</label>
-        <select name="dongSP" id="dongSP" class="form-select" aria-label="Default select example">
-            <%--        <option selected>Open this select menu</option>--%>
-            <c:forEach items="${lstDSP}" var="dsp">
-                <option value="${dsp.id}">${dsp.ten}</option>
-            </c:forEach>
-        </select>
+    <div class="row">
+        <div class="col-6">
+            <label for="mauSac" class="form-label">Màu Sắc</label>
+            <select name="mauSac" id="mauSac" class="form-select" aria-label="Default select example">
+                <%--        <option selected>Open this select menu</option>--%>
+                <c:forEach items="${lstMS}" var="ms">
+                    <option value="${ms.id}">${ms.ten}</option>
+                </c:forEach>
+            </select>
+        </div>
+        <div class="col-6">
+            <label for="dongSP" class="form-label">Dòng Sản Phẩm</label>
+            <select name="dongSP" id="dongSP" class="form-select" aria-label="Default select example">
+                <%--        <option selected>Open this select menu</option>--%>
+                <c:forEach items="${lstDSP}" var="dsp">
+                    <option value="${dsp.id}">${dsp.ten}</option>
+                </c:forEach>
+            </select>
+        </div>
     </div>
     <div class="mb-2">
         <label for="namBH" class="form-label">Năm Bảo Hành</label>
@@ -84,7 +96,7 @@
 <section style="text-align: center">
     <table class="table table-striped table-hover">
         <thead>
-        <tr>
+        <tr class="table_title">
             <td>Id</td>
             <td>Tên Sản Phẩm</td>
             <td>NSX</td>
@@ -118,5 +130,10 @@
         </tbody>
     </table>
 </section>
+
+<%@include file="/view/layout/footer.jsp" %>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/scripts.js"></script>
 </body>
 </html>

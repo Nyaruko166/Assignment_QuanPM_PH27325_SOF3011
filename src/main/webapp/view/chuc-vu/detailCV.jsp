@@ -13,9 +13,11 @@
           rel="stylesheet"
           integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
           crossorigin="anonymous">
+    <link href="/css/css.css" rel="stylesheet"/>
 </head>
 <body>
 <form action="/chuc-vu/update" method="post" class="container">
+    <h2 class="title">Chi Tiết Chức Vụ</h2>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">ID</label>
         <div class="col-sm-10">

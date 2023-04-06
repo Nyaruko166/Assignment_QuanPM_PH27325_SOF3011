@@ -7,23 +7,37 @@
           rel="stylesheet"
           integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
           crossorigin="anonymous">
-
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+          type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+          rel="stylesheet" type="text/css"/>
+    <link href="css/styles.css" rel="stylesheet"/>
 </head>
 <body>
+
+<%@include file="/view/layout/header.jsp" %>
+
+<header class="masthead" style="background-image: url('/assets/img/home-bg.jpg')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>Assignment</h1>
+                    <span class="subheading"> SOF3011</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
 <section class="container" style="margin: auto">
-    <h1>
-        <%= "Hello World!" %>
-    </h1>
-    <br>
-    <a href="/khach-hang/view" class="btn btn-info">Hello Khách Hàng</a>
-    <a href="/chuc-vu/view" class="btn btn-info">Hello Chức Vụ</a>
-    <a href="/cua-hang/view" class="btn btn-info">Hello Cửa Hàng</a>
-    <a href="/dong-sp/view" class="btn btn-info">Hello Dòng SP</a>
-    <a href="/mau-sac/view" class="btn btn-info">Hello Màu Sắc</a>
-    <a href="/nsx/view" class="btn btn-info">Hello NSX</a>
-    <a href="/nhan-vien/view" class="btn btn-info">Hello Nhân Viên</a>
-    <a href="/san-pham/view" class="btn btn-info">Hello Sản Phẩm</a>
-    <a href="/ctsp/view" class="btn btn-info">Hello CT Sản Phẩm</a>
+
 </section>
+
+<%@include file="/view/layout/footer.jsp" %>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/scripts.js"></script>
 </body>
 </html>
