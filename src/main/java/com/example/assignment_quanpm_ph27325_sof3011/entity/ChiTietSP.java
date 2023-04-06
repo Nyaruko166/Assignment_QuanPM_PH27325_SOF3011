@@ -28,7 +28,7 @@ public class ChiTietSP {
     private NSX nsx;
 
     @ManyToOne
-    @JoinColumn(name = "IdNsx", referencedColumnName = "Id")
+    @JoinColumn(name = "IdMauSac", referencedColumnName = "Id")
     private MauSac mauSac;
 
     @ManyToOne
