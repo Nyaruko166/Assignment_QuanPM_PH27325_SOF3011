@@ -14,9 +14,11 @@
           rel="stylesheet"
           integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
           crossorigin="anonymous">
+    <link href="/css/css.css" rel="stylesheet"/>
 </head>
 <body>
 <form action="/dong-sp/update" method="post" class="container">
+    <h2 class="title">Chi Tiết Dòng SP</h2>
     <div class="mb-2">
         <label for="id" class="form-label">ID</label>
         <input type="text" class="form-control" id="id" name="id" disabled value="${dsp.id}">

@@ -15,94 +15,110 @@
           rel="stylesheet"
           integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
           crossorigin="anonymous">
+    <link href="/css/css.css" rel="stylesheet"/>
 </head>
 <body>
 <form action="/nhan-vien/update" method="post" class="container">
+    <h2 class="title">Chi Tiết Nhân Viên</h2>
     <div class="mb-2">
         <label for="id" class="form-label">ID</label>
         <input type="text" class="form-control" id="id" name="id" disabled value="${nv.id}">
     </div>
-    <div class="mb-2">
-        <label for="ma" class="form-label">Mã</label>
-        <input type="text" class="form-control" id="ma" name="ma" value="${nv.ma}">
-    </div>
-    <div class="mb-2">
-        <label for="ten" class="form-label">Tên</label>
-        <input type="text" class="form-control" id="ten" name="ten" value="${nv.ten}">
-    </div>
-    <div class="mb-2">
-        <label for="tenDem" class="form-label">Tên Đệm</label>
-        <input type="text" class="form-control" id="tenDem" name="tenDem" value="${nv.tenDem}">
-    </div>
-    <div class="mb-2">
-        <label for="ho" class="form-label">Họ</label>
-        <input type="text" class="form-control" id="ho" name="ho" value="${nv.ho}">
-    </div>
-    <div class="mb-2">
-        <label class="form-label">Giới Tính</label>
-        <div class="form-check">
-            <input value="Nam" class="form-check-input" type="radio" name="gioiTinh"
-                   id="flexRadioDefault1" ${nv.gioiTinh == "Nam" ? 'checked' : ''}>
-            <label class="form-check-label" for="flexRadioDefault1">
-                Nam
-            </label>
+    <div class="row">
+        <div class="col-6">
+            <label for="ma" class="form-label">Mã</label>
+            <input type="text" class="form-control" id="ma" name="ma" value="${nv.ma}">
         </div>
-        <div class="form-check">
-            <input value="Nữ" class="form-check-input" type="radio" name="gioiTinh"
-                   id="flexRadioDefault2" ${nv.gioiTinh == "Nữ" ? 'checked' : ''}>
-            <label class="form-check-label" for="flexRadioDefault2">
-                Nữ
-            </label>
+        <div class="col-6">
+            <label for="ten" class="form-label">Tên</label>
+            <input type="text" class="form-control" id="ten" name="ten" value="${nv.ten}">
         </div>
     </div>
-    <div class="mb-2">
-        <label for="ngaySinh" class="form-label">Ngày Sinh</label>
-        <input type="date" class="form-control" id="ngaySinh" name="ngaySinh" value="${ngaySinh}">
+    <div class="row">
+        <div class="col-6">
+            <label for="tenDem" class="form-label">Tên Đệm</label>
+            <input type="text" class="form-control" id="tenDem" name="tenDem" value="${nv.tenDem}">
+        </div>
+        <div class="col-6">
+            <label for="ho" class="form-label">Họ</label>
+            <input type="text" class="form-control" id="ho" name="ho" value="${nv.ho}">
+        </div>
     </div>
-    <div class="mb-2">
-        <label for="diaChi" class="form-label">Địa Chỉ</label>
-        <input type="text" class="form-control" id="diaChi" name="diaChi" value="${nv.diaChi}">
+    <div class="row">
+        <div class="col-6">
+            <label class="form-label">Giới Tính</label>
+            <div class="form-check">
+                <input value="Nam" class="form-check-input" type="radio" name="gioiTinh"
+                       id="flexRadioDefault1" ${nv.gioiTinh == "Nam" ? 'checked' : ''}>
+                <label class="form-check-label" for="flexRadioDefault1">
+                    Nam
+                </label>
+            </div>
+            <div class="form-check">
+                <input value="Nữ" class="form-check-input" type="radio" name="gioiTinh"
+                       id="flexRadioDefault2" ${nv.gioiTinh == "Nữ" ? 'checked' : ''}>
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Nữ
+                </label>
+            </div>
+        </div>
+        <div class="col-6">
+            <label class="form-label">Trạng Thái</label>
+            <div class="form-check">
+                <input value="1" class="form-check-input" type="radio" name="trangThai"
+                       id="trangThai1" ${nv.trangThai == 1 ? 'checked' : ''}>
+                <label class="form-check-label" for="trangThai1">
+                    Hoạt Động
+                </label>
+            </div>
+            <div class="form-check">
+                <input value="0" class="form-check-input" type="radio" name="trangThai"
+                       id="trangThai2" ${nv.trangThai == 0 ? 'checked' : ''}>
+                <label class="form-check-label" for="trangThai2">
+                    Ngừng Hoạt Động
+                </label>
+            </div>
+        </div>
     </div>
-    <div class="mb-2">
-        <label for="sdt" class="form-label">SĐT</label>
-        <input type="number" class="form-control" id="sdt" name="sdt" value="${nv.sdt}">
+    <div class="row">
+        <div class="col-6">
+            <label for="ngaySinh" class="form-label">Ngày Sinh</label>
+            <input type="date" class="form-control" id="ngaySinh" name="ngaySinh" value="${ngaySinh}">
+        </div>
+        <div class="col-6">
+            <label for="diaChi" class="form-label">Địa Chỉ</label>
+            <input type="text" class="form-control" id="diaChi" name="diaChi" value="${nv.diaChi}">
+        </div>
     </div>
-    <div class="mb-2">
-        <label for="matKhau" class="form-label">Mật Khẩu</label>
-        <input type="text" class="form-control" id="matKhau" name="matKhau" value="${nv.matKhau}">
+    <div class="row">
+        <div class="col-6">
+            <label for="sdt" class="form-label">SĐT</label>
+            <input type="number" class="form-control" id="sdt" name="sdt" value="${nv.sdt}">
+        </div>
+        <div class="col-6">
+            <label for="matKhau" class="form-label">Mật Khẩu</label>
+            <input type="text" class="form-control" id="matKhau" name="matKhau" value="${nv.matKhau}">
+        </div>
     </div>
-    <div class="mb-2">
-        <label for="cuaHang" class="form-label">Cửa Hàng</label>
-        <select name="cuaHang" id="cuaHang" class="form-select" aria-label="Default select example">
-            <%--        <option selected>Open this select menu</option>--%>
-            <c:forEach items="${lstCH}" var="ch">
-                <option value="${ch.id}" ${nv.cuaHang.ten == ch.ten ? 'selected' : ''}>${ch.ten}</option>
-            </c:forEach>
+    <div class="row">
+        <div class="col-6">
+            <label for="cuaHang" class="form-label">Cửa Hàng</label>
+            <select name="cuaHang" id="cuaHang" class="form-select" aria-label="Default select example">
+                <%--        <option selected>Open this select menu</option>--%>
+                <c:forEach items="${lstCH}" var="ch">
+                    <option value="${ch.id}" ${nv.cuaHang.ten == ch.ten ? 'selected' : ''}>${ch.ten}</option>
+                </c:forEach>
 
-        </select>
-    </div>
-    <div class="mb-2">
-        <label for="chucVu" class="form-label">Chức Vụ</label>
-        <select name="chucVu" id="chucVu" class="form-select" aria-label="Default select example">
-            <%--        <option selected>Open this select menu</option>--%>
-            <c:forEach items="${lstCV}" var="cv">
-                <option value="${cv.id}" ${nv.chucVu.id == cv.id ? 'selected' : ''}>${cv.ten}</option>
-            </c:forEach>
-        </select>
-    </div>
-    <div class="mb-2">
-        <label class="form-label">Trạng Thái</label>
-        <div class="form-check">
-            <input value="1" class="form-check-input" type="radio" name="trangThai" id="trangThai1" ${nv.trangThai == 1 ? 'checked' : ''}>
-            <label class="form-check-label" for="trangThai1">
-                Hoạt Động
-            </label>
+            </select>
         </div>
-        <div class="form-check">
-            <input value="0" class="form-check-input" type="radio" name="trangThai" id="trangThai2" ${nv.trangThai == 0 ? 'checked' : ''}>
-            <label class="form-check-label" for="trangThai2">
-                Ngừng Hoạt Động
-            </label>
+        <div class="col-6">
+            <label for="chucVu" class="form-label">Chức Vụ</label>
+            <select name="chucVu" id="chucVu" class="form-select" aria-label="Default select example">
+                <%--        <option selected>Open this select menu</option>--%>
+                <c:forEach items="${lstCV}" var="cv">
+                    <option value="${cv.id}" ${nv.chucVu.id == cv.id ? 'selected' : ''}>${cv.ten}</option>
+                </c:forEach>
+            </select>
         </div>
     </div>
     <div class="col-md-12 text-center">

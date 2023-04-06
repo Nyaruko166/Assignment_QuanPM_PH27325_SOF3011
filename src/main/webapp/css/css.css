@@ -17,5 +17,6 @@ table{
 .title{
     text-align: center;
     font-weight: bold;
+    margin-top: 15px;
     margin-bottom: 20px;
 }

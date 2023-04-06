@@ -41,7 +41,6 @@ public class NhanVienServlet extends HttpServlet {
     UUID uid;
 
     @Override
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         uri = request.getRequestURI();
         if (uri.contains("view")) {

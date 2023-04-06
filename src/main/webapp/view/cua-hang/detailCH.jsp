@@ -19,7 +19,7 @@
 </head>
 <body>
 <form action="/cua-hang/update" method="post" class="container">
-    <h2 class="title">Chi Tiết Khách Hàng</h2>
+    <h2 class="title">Chi Tiết Cửa Hàng</h2>
     <div class="mb-2">
         <label for="id" class="form-label">ID</label>
         <input type="text" class="form-control" id="id" name="id" value="${ch.id}" disabled>

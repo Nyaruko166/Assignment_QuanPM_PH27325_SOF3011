@@ -19,94 +19,107 @@
           type="text/css"/>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
           rel="stylesheet" type="text/css"/>
-    <link href="css/styles.css" rel="stylesheet"/>
+    <link href="/css/css.css" rel="stylesheet"/>
 </head>
 <body>
 <%@include file="/view/layout/header.jsp" %>
 <form action="/nhan-vien/add" method="post" class="container">
+    <h2 class="title">Thông Tin Nhân Viên</h2>
     <%--    <div class="mb-2">--%>
     <%--        <label for="id" class="form-label">ID</label>--%>
     <%--        <input type="text" class="form-control" id="id" name="id" disabled>--%>
     <%--    </div>--%>
-    <div class="mb-2">
-        <label for="ma" class="form-label">Mã</label>
-        <input type="text" class="form-control" id="ma" name="ma">
-    </div>
-    <div class="mb-2">
-        <label for="ten" class="form-label">Tên</label>
-        <input type="text" class="form-control" id="ten" name="ten">
-    </div>
-    <div class="mb-2">
-        <label for="tenDem" class="form-label">Tên Đệm</label>
-        <input type="text" class="form-control" id="tenDem" name="tenDem">
-    </div>
-    <div class="mb-2">
-        <label for="ho" class="form-label">Họ</label>
-        <input type="text" class="form-control" id="ho" name="ho">
-    </div>
-    <div class="mb-2">
-        <label class="form-label">Giới Tính</label>
-        <div class="form-check">
-            <input value="Nam" class="form-check-input" type="radio" name="gioiTinh" id="flexRadioDefault1" checked>
-            <label class="form-check-label" for="flexRadioDefault1">
-                Nam
-            </label>
+    <div class="row">
+        <div class="col-6">
+            <label for="ma" class="form-label">Mã</label>
+            <input type="text" class="form-control" id="ma" name="ma">
         </div>
-        <div class="form-check">
-            <input value="Nữ" class="form-check-input" type="radio" name="gioiTinh" id="flexRadioDefault2">
-            <label class="form-check-label" for="flexRadioDefault2">
-                Nữ
-            </label>
+        <div class="col-6">
+            <label for="ten" class="form-label">Tên</label>
+            <input type="text" class="form-control" id="ten" name="ten">
         </div>
     </div>
-    <div class="mb-2">
-        <label for="ngaySinh" class="form-label">Ngày Sinh</label>
-        <input type="date" class="form-control" id="ngaySinh" name="ngaySinh">
+    <div class="row">
+        <div class="col-6">
+            <label for="tenDem" class="form-label">Tên Đệm</label>
+            <input type="text" class="form-control" id="tenDem" name="tenDem">
+        </div>
+        <div class="col-6">
+            <label for="ho" class="form-label">Họ</label>
+            <input type="text" class="form-control" id="ho" name="ho">
+        </div>
     </div>
-    <div class="mb-2">
-        <label for="diaChi" class="form-label">Địa Chỉ</label>
-        <input type="text" class="form-control" id="diaChi" name="diaChi">
+    <div class="row">
+        <div class="col-6">
+            <label for="ngaySinh" class="form-label">Ngày Sinh</label>
+            <input type="date" class="form-control" id="ngaySinh" name="ngaySinh">
+        </div>
+        <div class="col-6">
+            <label for="diaChi" class="form-label">Địa Chỉ</label>
+            <input type="text" class="form-control" id="diaChi" name="diaChi">
+        </div>
     </div>
-    <div class="mb-2">
-        <label for="sdt" class="form-label">SĐT</label>
-        <input type="number" class="form-control" id="sdt" name="sdt">
+    <div class="row">
+        <div class="col-6">
+            <label for="sdt" class="form-label">SĐT</label>
+            <input type="number" class="form-control" id="sdt" name="sdt">
+        </div>
+        <div class="col-6">
+            <label for="matKhau" class="form-label">Mật Khẩu</label>
+            <input type="text" class="form-control" id="matKhau" name="matKhau">
+        </div>
     </div>
-    <div class="mb-2">
-        <label for="matKhau" class="form-label">Mật Khẩu</label>
-        <input type="text" class="form-control" id="matKhau" name="matKhau">
-    </div>
-    <div class="mb-2">
-        <label for="cuaHang" class="form-label">Cửa Hàng</label>
-        <select name="cuaHang" id="cuaHang" class="form-select" aria-label="Default select example">
-            <%--        <option selected>Open this select menu</option>--%>
-            <c:forEach items="${lstCH}" var="ch">
-                <option value="${ch.id}">${ch.ten}</option>
-            </c:forEach>
+    <div class="row">
+        <div class="col-6">
+            <label for="cuaHang" class="form-label">Cửa Hàng</label>
+            <select name="cuaHang" id="cuaHang" class="form-select" aria-label="Default select example">
+                <%--        <option selected>Open this select menu</option>--%>
+                <c:forEach items="${lstCH}" var="ch">
+                    <option value="${ch.id}">${ch.ten}</option>
+                </c:forEach>
 
-        </select>
-    </div>
-    <div class="mb-2">
-        <label for="chucVu" class="form-label">Chức Vụ</label>
-        <select name="chucVu" id="chucVu" class="form-select" aria-label="Default select example">
-            <%--        <option selected>Open this select menu</option>--%>
-            <c:forEach items="${lstCV}" var="cv">
-                <option value="${cv.id}">${cv.ten}</option>
-            </c:forEach>
-        </select>
-    </div>
-    <div class="mb-2">
-        <label class="form-label">Trạng Thái</label>
-        <div class="form-check">
-            <input value="1" class="form-check-input" type="radio" name="trangThai" id="trangThai1" checked>
-            <label class="form-check-label" for="trangThai1">
-                Hoạt Động
-            </label>
+            </select>
         </div>
-        <div class="form-check">
-            <input value="0" class="form-check-input" type="radio" name="trangThai" id="trangThai2">
-            <label class="form-check-label" for="trangThai2">
-                Ngừng Hoạt Động
-            </label>
+        <div class="col-6">
+            <label for="chucVu" class="form-label">Chức Vụ</label>
+            <select name="chucVu" id="chucVu" class="form-select" aria-label="Default select example">
+                <%--        <option selected>Open this select menu</option>--%>
+                <c:forEach items="${lstCV}" var="cv">
+                    <option value="${cv.id}">${cv.ten}</option>
+                </c:forEach>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <label class="form-label">Trạng Thái</label>
+            <div class="form-check">
+                <input value="1" class="form-check-input" type="radio" name="trangThai" id="trangThai1" checked>
+                <label class="form-check-label" for="trangThai1">
+                    Hoạt Động
+                </label>
+            </div>
+            <div class="form-check">
+                <input value="0" class="form-check-input" type="radio" name="trangThai" id="trangThai2">
+                <label class="form-check-label" for="trangThai2">
+                    Ngừng Hoạt Động
+                </label>
+            </div>
+        </div>
+        <div class="col-6">
+            <label class="form-label">Giới Tính</label>
+            <div class="form-check">
+                <input value="Nam" class="form-check-input" type="radio" name="gioiTinh" id="flexRadioDefault1" checked>
+                <label class="form-check-label" for="flexRadioDefault1">
+                    Nam
+                </label>
+            </div>
+            <div class="form-check">
+                <input value="Nữ" class="form-check-input" type="radio" name="gioiTinh" id="flexRadioDefault2">
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Nữ
+                </label>
+            </div>
         </div>
     </div>
     <div class="col-md-12 text-center">
@@ -116,7 +129,7 @@
 <section style="text-align: center">
     <table class="table table-striped table-hover">
         <thead>
-        <tr>
+        <tr class="table_title">
             <td>Id</td>
             <td>Mã</td>
             <td>Tên</td>

@@ -19,11 +19,12 @@
           type="text/css"/>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
           rel="stylesheet" type="text/css"/>
-    <link href="css/styles.css" rel="stylesheet"/>
+    <link href="/css/css.css" rel="stylesheet"/>
 </head>
 <body>
 <%@include file="/view/layout/header.jsp" %>
 <form action="/dong-sp/add" method="post" class="container">
+    <h2 class="title">Thông Tin Dòng Sản Phẩm</h2>
     <%--    <div class="mb-2">--%>
     <%--        <label for="id" class="form-label">ID</label>--%>
     <%--        <input type="text" class="form-control" id="id" name="id" disabled>--%>
@@ -43,7 +44,7 @@
 <section style="text-align: center">
     <table class="table table-striped table-hover">
         <thead>
-        <tr>
+        <tr class="table_title">
             <td>Id</td>
             <td>Mã</td>
             <td>Tên</td>
