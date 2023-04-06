@@ -22,7 +22,9 @@
     <link href="/css/css.css" rel="stylesheet"/>
 </head>
 <body>
+
 <%@include file="/view/layout/header.jsp" %>
+
 <form action="/nhan-vien/add" method="post" class="container">
     <h2 class="title">Thông Tin Nhân Viên</h2>
     <%--    <div class="mb-2">--%>
@@ -163,7 +165,12 @@
                 <td>${x.cuaHang.ten}</td>
                 <td>${x.chucVu.ten}</td>
                 <td>${x.idGuiBC}</td>
-                <td>${x.trangThai}</td>
+                <c:if test="${x.trangThai == 0}">
+                    <td>Ngừng Hoạt Động</td>
+                </c:if>
+                <c:if test="${x.trangThai != 0}">
+                    <td>Hoạt Động</td>
+                </c:if>
                 <td><a href="/nhan-vien/detail?id=${x.id}" class="btn btn-success">Detail</a>
                     <a href="/nhan-vien/delete?id=${x.id}" class="btn btn-danger">Delete</a></td>
             </tr>

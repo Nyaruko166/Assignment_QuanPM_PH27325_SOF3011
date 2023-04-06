@@ -14,7 +14,7 @@ import java.text.ParseException;
 import java.util.List;
 import java.util.UUID;
 
-@WebServlet(name = "NhanVienServlet", value = {
+@WebServlet(name = "CTSPServlet", value = {
         "/ctsp/view",
         "/ctsp/add",
         "/ctsp/detail",
